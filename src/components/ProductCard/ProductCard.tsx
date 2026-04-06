@@ -1,6 +1,6 @@
 import styles from './ProductCard.module.css'
 
-export const ProductCard = () => {
+function ProductCard () {
   return (
     <div className={styles.card}>
       ProductCard

@@ -1,9 +1,9 @@
 import { useEffect , useState} from 'react'
-//import { ProductCard } from "./components/ProductCard"
+import ProductCard from "../../components/ProductCard"
 import styles from './App.module.css'
-import { db } from './services/firebase'
+import db from '../../services/firebase'
 import { collection, getDocs } from 'firebase/firestore'
-import type { Product } from './types/Product'
+import type { Product } from '../../types/Product'
 
 const getProducts = async (): Promise<Product[]> => {
   const snapshot = await getDocs(collection(db, 'products'))
@@ -30,6 +30,7 @@ function App() {
       {products.map(product => (
         product.title
       ))}
+      <ProductCard />
     </div>
   )
 }
