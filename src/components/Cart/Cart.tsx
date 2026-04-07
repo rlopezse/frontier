@@ -1,7 +1,11 @@
+import { useCartContext } from '../../context/useCartContext'
+
 const Cart = () => {
+  const { cart } = useCartContext()
+
   return (
     <div className="cart">
-      <h2>Filter</h2>
+      <h2>{ cart }</h2>
     </div>
   )
 }
