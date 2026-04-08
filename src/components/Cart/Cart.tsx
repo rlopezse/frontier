@@ -4,7 +4,7 @@ const Cart = () => {
   const { cart } = useCartContext()
 
   return (
-    <div className="cart">
+    <div className="cart" style={{ display: 'none' }}>
       <h2>{ cart }</h2>
     </div>
   )

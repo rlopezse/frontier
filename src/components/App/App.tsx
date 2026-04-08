@@ -1,18 +1,22 @@
 import { CartContextProvider } from "../../context/CartContext"
 import ProductGrid from "../../components/ProductGrid/ProductGrid"
-import Filter from "../../components/Filter"
-import Cart from "../../components/Cart"
+import Filter from "../../components/Filter/Filter"
+import Cart from "../../components/Cart/Cart"
 
 import styles from './App.module.css'
 
 function App() {
   return (
-    <main className={styles.ecommerce}>
-      <Filter />
-      <CartContextProvider>
-        <Cart />
-        <ProductGrid />
-      </CartContextProvider>
+    <main className={styles.ft_container}>
+      <section className={styles.ft_sidebar}>
+        <Filter />
+      </section>
+      <section className={styles.ft_grid}>
+        <CartContextProvider>
+          <Cart />
+          <ProductGrid />
+        </CartContextProvider>
+      </section>
     </main>
   )
 }

@@ -5,6 +5,7 @@ import db from '../../services/firebase'
 
 import type { Product } from '../../types/Product'
 
+import Loader from '../Loader/Loader'
 import ProductCard from "./ProductCard/ProductCard"
 
 const getProducts = async (): Promise<Product[]> => {
@@ -25,17 +26,15 @@ function ProductGrid() {
   }, [])
 
   if (loading) {
-    return <div>Cargando productos...</div>
+    return <Loader />
   }
 
   return (
-    <div className="product-grid">
-      <div>
-        {products.map(product => (
-          <ProductCard data={product} />
-        ))}
-      </div>
-    </div>
+    <>
+      {products.map(product => (
+        <ProductCard data={product} />
+      ))}
+    </>
   )
 }
 
