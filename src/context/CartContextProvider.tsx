@@ -1,9 +1,7 @@
-import { createContext, useState } from "react"
-import type { ReactNode } from "react"
+import { CartContext } from './CartContext';
 
-import type { CartContextType } from "../types/CartContext"
-
-export const CartContext = createContext<CartContextType | undefined>(undefined)
+import type { ReactNode } from 'react';
+import { useState } from 'react';
 
 export const CartContextProvider = ({ children } : {children: ReactNode}) => {
   const [cart, setCart] = useState('frontier');
@@ -14,4 +12,3 @@ export const CartContextProvider = ({ children } : {children: ReactNode}) => {
     </CartContext.Provider>
   )
 };
-

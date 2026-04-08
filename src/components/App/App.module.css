@@ -1,5 +1,19 @@
-.ecommerce {
+.html, body  {
+  background-color: --gray-100;
+}
+
+.ft_container {
   width: 100%;
   max-width: 991px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+
+.ft_filter {
+}
+
+.ft_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
