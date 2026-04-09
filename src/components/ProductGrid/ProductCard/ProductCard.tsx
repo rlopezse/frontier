@@ -1,7 +1,7 @@
 import type { Product } from '../../../types/Product'
 import { useCartContext } from '../../../context/useCartContext'
 
-function ProductCard ({data}: {data: Product}) {
+function ProductCard({ data }: { data: Product }) {
   const { setCart } = useCartContext()
 
   return (

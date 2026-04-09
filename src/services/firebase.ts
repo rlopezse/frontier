@@ -1,12 +1,13 @@
-import { initializeApp } from "firebase/app";
+import { initializeApp } from 'firebase/app'
 import { getFirestore } from 'firebase/firestore'
 
-const API_KEY = import.meta.env.VITE_API_KEY;
-const FIREBASE_AUTH_DOMAIN = import.meta.env.VITE_FIREBASE_AUTH_DOMAIN;
-const FIREBASE_PROJECT_ID = import.meta.env.VITE_FIREBASE_PROJECT_ID;
-const FIREBASE_STORAGE_BUCKET = import.meta.env.VITE_FIREBASE_STORAGE_BUCKET;
-const FIREBASE_MESSAGING_SENDER_ID =  import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID;
-const FIREBASE_APP_ID = import.meta.env.VITE_FIREBASE_APP_ID;
+const API_KEY = import.meta.env.VITE_API_KEY
+const FIREBASE_AUTH_DOMAIN = import.meta.env.VITE_FIREBASE_AUTH_DOMAIN
+const FIREBASE_PROJECT_ID = import.meta.env.VITE_FIREBASE_PROJECT_ID
+const FIREBASE_STORAGE_BUCKET = import.meta.env.VITE_FIREBASE_STORAGE_BUCKET
+const FIREBASE_MESSAGING_SENDER_ID = import.meta.env
+  .VITE_FIREBASE_MESSAGING_SENDER_ID
+const FIREBASE_APP_ID = import.meta.env.VITE_FIREBASE_APP_ID
 
 const firebaseConfig = {
   apiKey: API_KEY,
@@ -14,8 +15,8 @@ const firebaseConfig = {
   projectId: FIREBASE_PROJECT_ID,
   storageBucket: FIREBASE_STORAGE_BUCKET,
   messagingSenderId: FIREBASE_MESSAGING_SENDER_ID,
-  appId: FIREBASE_APP_ID
-};
+  appId: FIREBASE_APP_ID,
+}
 
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig)
 export default getFirestore(app)
