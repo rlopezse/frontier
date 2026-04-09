@@ -1,7 +1,7 @@
-import { CartContextProvider } from "../../context/CartContext"
-import ProductGrid from "../../components/ProductGrid/ProductGrid"
-import Filter from "../../components/Filter/Filter"
-import Cart from "../../components/Cart/Cart"
+import { CartContextProvider } from '../../context/CartContext'
+import ProductGrid from '../../components/ProductGrid/ProductGrid'
+import Filter from '../../components/Filter/Filter'
+import Cart from '../../components/Cart/Cart'
 
 import styles from './App.module.css'
 

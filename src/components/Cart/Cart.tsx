@@ -5,10 +5,9 @@ const Cart = () => {
 
   return (
     <div className="cart" style={{ display: 'none' }}>
-      <h2>{ cart }</h2>
+      <h2>{cart}</h2>
     </div>
   )
 }
 
 export default Cart
-
