@@ -1,5 +1,5 @@
 import type { Size } from '../../types/Product'
-import s from './filter.module.css'
+import s from './Filter.module.css'
 
 const sizes: Size[] = ['XS', 'S', 'M', 'ML', 'L', 'XL', 'XXL']
 
