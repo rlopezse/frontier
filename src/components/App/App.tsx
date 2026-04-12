@@ -1,21 +1,25 @@
-import { CartContextProvider } from '../../context/CartContext'
+import { CartContextProvider } from '../../context/Cart/CartContextProvider'
+import { ProductContextProvider } from '../../context/Product/ProductContextProvider'
+
 import ProductGrid from '../../components/ProductGrid/ProductGrid'
 import Filter from '../../components/Filter/Filter'
 import Cart from '../../components/Cart/Cart'
 
-import styles from './App.module.css'
+import s from './App.module.css'
 
 function App() {
   return (
-    <main className={styles.ft_container}>
-      <section className={styles.ft_sidebar}>
+    <main className={s.ft_container}>
+      <section className={s.ft_sidebar}>
         <Filter />
       </section>
-      <section className={styles.ft_grid}>
+      <section className={s.ft_grid}>
         <CartContextProvider>
           <Cart />
-          <ProductGrid />
         </CartContextProvider>
+        <ProductContextProvider>
+          <ProductGrid />
+        </ProductContextProvider>
       </section>
     </main>
   )
