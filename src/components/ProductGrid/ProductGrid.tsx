@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { collection, getDocs } from 'firebase/firestore'
 
+import { useProductContext } from '../../context/Product/useProductContext'
+
 import db from '../../services/firebase'
 
 import type { Product } from '../../types/Product'
@@ -14,12 +16,13 @@ const getProducts = async (): Promise<Product[]> => {
 }
 
 function ProductGrid() {
-  const [products, setProducts] = useState<Product[]>([])
+  const { product, setProduct } = useProductContext()
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     getProducts().then((products) => {
-      setProducts(products)
+      console.log(products)
+      setProduct(products)
       setLoading(false)
     })
   }, [])
@@ -30,7 +33,7 @@ function ProductGrid() {
 
   return (
     <>
-      {products.map((product) => (
+      {product.map((product) => (
         <ProductCard data={product} />
       ))}
     </>

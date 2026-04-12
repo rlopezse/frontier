@@ -6,7 +6,7 @@ export interface Product {
   price: number
   currencyId: string
   currencyFormat: string
-  availableSizes: string[]
+  availableSizes: Size[]
   installments: number
   isFreeShipping: boolean
   style: string
