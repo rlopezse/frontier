@@ -4,7 +4,11 @@ import type { Product } from '../../types/Product'
 import type { ReactNode } from 'react'
 import { useState } from 'react'
 
-export const ProductContextProvider = ({ children }: { children: ReactNode }) => {
+export const ProductContextProvider = ({
+  children,
+}: {
+  children: ReactNode
+}) => {
   const [product, setProduct] = useState<Product[]>([])
 
   return (
