@@ -1,20 +1,19 @@
 .html,
 body {
-  background-color: --gray-100;
+  background-color: --gray-200;
 }
 
 .ft_container {
-  width: 100%;
+  width: calc(100% - 30px);
   max-width: 991px;
-  margin: 0 auto;
+  margin: 40px auto 0;
   display: grid;
+  column-gap: 30px;
   grid-template-columns: 200px 1fr;
-}
-
-.ft_filter {
 }
 
 .ft_grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
 }
