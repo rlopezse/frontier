@@ -1,10 +1,10 @@
-const formatPrice = (price: number, currencyId: string): string => {
-  switch (currencyId) {
-    case 'BRL':
-      return price.toFixed(2).replace('.', ',')
-    default:
-      return price.toFixed(2)
-  }
+const formatPrice = (price: number): string => {
+  return new Intl.NumberFormat('es-CL', {
+    style: 'currency',
+    currency: 'CLP',
+    minimumFractionDigits: 0, 
+    maximumFractionDigits: 0,
+  }).format(price);
 }
 
 export default formatPrice
