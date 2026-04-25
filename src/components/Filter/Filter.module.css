@@ -21,6 +21,12 @@
   width: 100%;
   display: block;
   border-radius: 8px;
-  font-size: 10px;
+  font-size: 12px;
   padding: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.filter_button:hover {
+  background-color: var(--gray-100);
+  border-color: var(--gray-400);
 }

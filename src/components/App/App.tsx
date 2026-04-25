@@ -1,6 +1,3 @@
-import { CartContextProvider } from '../../context/Cart/CartContextProvider'
-import { ProductContextProvider } from '../../context/Product/ProductContextProvider'
-
 import ProductGrid from '../../components/ProductGrid/ProductGrid'
 import Filter from '../../components/Filter/Filter'
 import Cart from '../../components/Cart/Cart'
@@ -14,12 +11,8 @@ function App() {
         <Filter />
       </section>
       <section className={s.ft_grid}>
-        <CartContextProvider>
-          <Cart />
-        </CartContextProvider>
-        <ProductContextProvider>
-          <ProductGrid />
-        </ProductContextProvider>
+        <Cart />
+        <ProductGrid />
       </section>
     </main>
   )

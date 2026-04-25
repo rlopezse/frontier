@@ -1,7 +1,7 @@
-import type { Category } from '../../types/Product'
+import type { Filter } from '../../types/FilterContext'
 import s from './Filter.module.css'
 
-const category: Category[] = [
+const category: Filter[] = [
   { name: 'apple' },
   { name: 'samsung' },
   { name: 'xiaomi' },
@@ -9,7 +9,7 @@ const category: Category[] = [
   { name: 'huawei' }
 ]
 
-const Filter = () => {
+const FilterTab = () => {
   return (
     <div className={s.filter}>
       <h3 className={s.filter_title}>Marca</h3>
@@ -24,4 +24,4 @@ const Filter = () => {
   )
 }
 
-export default Filter
+export default FilterTab

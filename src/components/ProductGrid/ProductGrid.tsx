@@ -5,7 +5,7 @@ import { useProductContext } from '../../context/Product/useProductContext'
 
 import db from '../../services/firebase'
 
-import type { Product } from '../../types/Product'
+import type { Product } from '../../types/ProductContext'
 
 import Loader from '../Loader/Loader'
 import ProductCard from './ProductCard/ProductCard'

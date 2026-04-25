@@ -1,11 +1,20 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { CartContextProvider } from './context/Cart/CartContextProvider'
+import { ProductContextProvider } from './context/Product/ProductContextProvider'
+import { FilterContextProvider } from './context/Filter/FilterContextProvider'
 import App from './components/App/App.tsx'
 import './styles/reset.css'
 import './styles/variables.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <ProductContextProvider>
+      <FilterContextProvider>
+        <CartContextProvider>
+          <App />
+        </CartContextProvider>
+      </FilterContextProvider>
+    </ProductContextProvider>
   </StrictMode>,
 )

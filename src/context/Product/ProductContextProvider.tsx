@@ -1,5 +1,5 @@
 import { ProductContext } from './ProductContext'
-import type { Product } from '../../types/Product'
+import type { Product } from '../../types/ProductContext'
 
 import type { ReactNode } from 'react'
 import { useState } from 'react'
