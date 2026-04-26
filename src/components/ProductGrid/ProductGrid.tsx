@@ -16,12 +16,14 @@ const getProducts = async (): Promise<Product[]> => {
 }
 
 function ProductGrid() {
-  const { product, setProduct } = useProductContext()
+  const { filteredProducts, setFilteredProducts, setProduct } =
+    useProductContext()
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     getProducts().then((products) => {
       setProduct(products)
+      setFilteredProducts(products)
       setLoading(false)
     })
   }, [])
@@ -32,7 +34,7 @@ function ProductGrid() {
 
   return (
     <>
-      {product.map((product) => (
+      {filteredProducts.map((product) => (
         <ProductCard data={product} />
       ))}
     </>

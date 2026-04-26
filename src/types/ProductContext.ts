@@ -12,5 +12,7 @@ export interface Product {
 
 export interface ProductContextType {
   product: Product[]
+  filteredProducts: Product[]
+  setFilteredProducts: (filteredProducts: Product[]) => void
   setProduct: (product: Product[]) => void
 }
