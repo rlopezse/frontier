@@ -2,9 +2,9 @@ const formatPrice = (price: number): string => {
   return new Intl.NumberFormat('es-CL', {
     style: 'currency',
     currency: 'CLP',
-    minimumFractionDigits: 0, 
+    minimumFractionDigits: 0,
     maximumFractionDigits: 0,
-  }).format(price);
+  }).format(price)
 }
 
 export default formatPrice

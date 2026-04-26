@@ -1,22 +1,21 @@
-import type { Filter } from '../../types/FilterContext'
 import s from './Filter.module.css'
+import { useFilterContext } from '../../context/Filter/useFilterContext'
 
-const category: Filter[] = [
-  { name: 'apple' },
-  { name: 'samsung' },
-  { name: 'xiaomi' },
-  { name: 'vivo' },
-  { name: 'huawei' }
-]
+const category: string[] = ['Apple', 'Samsung', 'Xiaomi', 'Huawei', 'Otras']
 
 const FilterTab = () => {
+  const { setFilter } = useFilterContext()
   return (
     <div className={s.filter}>
       <h3 className={s.filter_title}>Marca</h3>
       <div className={s.filter_buttons}>
-        {category.map((category) => (
-          <button className={s.filter_button}>
-            {category.name}
+        {category.map((category: string) => (
+          <button
+            className={s.filter_button}
+            onClick={() => setFilter(category)}
+            key={category}
+          >
+            {category}
           </button>
         ))}
       </div>
