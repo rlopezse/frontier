@@ -9,7 +9,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "prettier": "prettier --write ."
+    "prettier": "npx prettier --write ."
   },
   "dependencies": {
     "firebase": "^12.11.0",

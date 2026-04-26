@@ -21,7 +21,6 @@ function ProductGrid() {
 
   useEffect(() => {
     getProducts().then((products) => {
-      console.log(products)
       setProduct(products)
       setLoading(false)
     })
