@@ -10,9 +10,12 @@ export const ProductContextProvider = ({
   children: ReactNode
 }) => {
   const [product, setProduct] = useState<Product[]>([])
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>([])
 
   return (
-    <ProductContext.Provider value={{ product, setProduct }}>
+    <ProductContext.Provider
+      value={{ product, filteredProducts, setFilteredProducts, setProduct }}
+    >
       {children}
     </ProductContext.Provider>
   )
