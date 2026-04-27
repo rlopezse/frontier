@@ -10,7 +10,7 @@ const FilterTab = () => {
   const { product, filteredProducts, setFilteredProducts } = useProductContext()
 
   if (product.length === 0) {
-    return <Loader />
+    return <Loader texto="Cargando filtros..." />
   }
 
   const handleProducts = (filter: string) => {
