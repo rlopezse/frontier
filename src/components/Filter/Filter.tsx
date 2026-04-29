@@ -5,6 +5,9 @@ import { useProductContext } from '../../context/Product/useProductContext'
 
 const category: string[] = ['apple', 'samsung', 'xiaomi', 'huawei']
 
+// agregar un boton para mostrar todos los productos
+// agregar un dropdown para ordenar por precio
+
 const FilterTab = () => {
   const { setFilter } = useFilterContext()
   const { product, filteredProducts, setFilteredProducts } = useProductContext()
