@@ -1,0 +1,34 @@
+.cart {
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  height: 100vh;
+  width: 345px;
+  top: 0;
+  position: fixed;
+  right: 0;
+  background-color: var(--black);
+  color: var(--white);
+
+  &_isOpen {
+    transform: translateX(0);
+  }
+
+  &_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  &_button {
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    bottom: 20px;
+    left: -100px;
+    color: var(--white);
+    cursor: pointer;  
+    background-color: var(--black);
+    border-radius: 16px;
+  }
+}
