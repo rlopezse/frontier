@@ -1,5 +1,4 @@
 import s from './Filter.module.css'
-import Loader from '../Loader/Loader'
 import { useFilterContext } from '../../context/Filter/useFilterContext'
 import { useProductContext } from '../../context/Product/useProductContext'
 
@@ -13,7 +12,7 @@ const FilterTab = () => {
   const { product, filteredProducts, setFilteredProducts } = useProductContext()
 
   if (product.length === 0) {
-    return <Loader texto="Cargando filtros..." />
+    return <></>
   }
 
   const handleProducts = (filter: string) => {
