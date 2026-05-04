@@ -7,7 +7,7 @@ import db from '../../services/firebase'
 
 import type { Product } from '../../types/ProductContext'
 
-import Loader from '../Loader/Loader'
+//import Loader from '../Loader/Loader'
 import ProductCard from './ProductCard/ProductCard'
 
 const getProducts = async (): Promise<Product[]> => {
@@ -29,7 +29,7 @@ function ProductGrid() {
   }, [])
 
   if (loading) {
-    return <Loader />
+    return <></>
   }
 
   return (

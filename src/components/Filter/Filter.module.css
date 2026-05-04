@@ -27,6 +27,5 @@
 }
 
 .filter_button:hover {
-  background-color: var(--gray-100);
   border-color: var(--gray-400);
 }
