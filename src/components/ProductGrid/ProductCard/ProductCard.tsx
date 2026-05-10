@@ -18,6 +18,9 @@ function ProductCard({ data }: { data: Product }) {
 
   return (
     <div className={s.product_card}>
+      {data.isFreeShipping && (
+        <span className={s.product_card_badge}>Envío Gratis</span>
+      )}
       <img
         className={s.product_card_image}
         src={`/static/products/${data.sku}.png`}
