@@ -7,14 +7,16 @@ const Cart = () => {
   const { cart, isOpen, setCart, setIsOpen } = useCartContext()
   const { product } = useProductContext()
 
-  if(product.length === 0) {
+  if (product.length === 0) {
     return <></>
   }
 
   return (
     <div className={`${s.cart} ${isOpen ? s.cart_isOpen : ''}`}>
       <button className={s.cart_button} onClick={() => setIsOpen(!isOpen)}>
-        <span className={s.cart_icon}><i className={s.cart_button_icon}></i></span>
+        <span className={s.cart_icon}>
+          <i className={s.cart_button_icon}></i>
+        </span>
         <span className={s.cart_button_length}>{cart.products.length}</span>
       </button>
       <div className={s.cart_container}>
@@ -28,7 +30,9 @@ const Cart = () => {
             cart.products.map((product, index) => (
               <div key={index} className={s.cart_items}>
                 <p className={s.cart_items_title}>{product.title}</p>
-                <p className={s.cart_items_price}>{formatPrice(product.price)}</p>
+                <p className={s.cart_items_price}>
+                  {formatPrice(product.price)}
+                </p>
               </div>
             ))
           )}
@@ -50,7 +54,10 @@ const Cart = () => {
           >
             Ir a pagar
           </button>
-          <button className={s.cart_bottom_clear} onClick={() => setCart({ products: [], checkout: 0 })}>
+          <button
+            className={s.cart_bottom_clear}
+            onClick={() => setCart({ products: [], checkout: 0 })}
+          >
             Vaciar carrito
           </button>
         </div>

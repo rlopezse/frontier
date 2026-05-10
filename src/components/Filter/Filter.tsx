@@ -30,7 +30,19 @@ const FilterTab = () => {
 
   return (
     <div className={s.filter}>
-      <h3 className={s.filter_title}>Marca</h3>
+      <h3 className={s.filter_title}>Ordenar por:</h3>
+      <div className={s.filter_buttons}>
+        {category.map((category: string) => (
+          <button
+            className={s.filter_button}
+            onClick={() => handleProducts(category)}
+            key={category}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
+      <h3 className={s.filter_title}>Marcas:</h3>
       <div className={s.filter_buttons}>
         {category.map((category: string) => (
           <button

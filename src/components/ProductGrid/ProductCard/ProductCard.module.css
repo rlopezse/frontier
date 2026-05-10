@@ -15,6 +15,23 @@
   border-radius: 8px;
   padding: 16px;
   text-align: center;
+  position: relative;
+  transition: box-shadow 0.3s ease;
+}
+
+.product_card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product_card_badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--teal);
+  color: var(--white);
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 0 8px 0 8px;
 }
 
 .product_card_title {
