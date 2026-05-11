@@ -31,9 +31,9 @@ const FilterTab = () => {
     setFilteredProducts(
       [...filteredProducts].sort((a, b) => {
         if (order === 'menor precio') {
-          return b.price - a.price
-        } else {
           return a.price - b.price
+        } else {
+          return b.price - a.price
         }
       }),
     )
