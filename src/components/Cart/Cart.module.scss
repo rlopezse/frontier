@@ -149,8 +149,26 @@
   }
 
   &_items {
+    display: flex;
+    justify-content: space-between;
     padding-bottom: 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    &_remove {
+      &_icon {
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbDpzcGFjZT0icHJlc2VydmUiIHN0eWxlPSJmaWxsLXJ1bGU6ZXZlbm9kZTtjbGlwLXJ1bGU6ZXZlbm9kZTtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MiIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMi43OTMgMTkuNzkzYS45OTkuOTk5IDAgMSAwIDEuNDE0IDEuNDE0TDEyIDEzLjQxNGw3Ljc5MyA3Ljc5M2EuOTk5Ljk5OSAwIDEgMCAxLjQxNC0xLjQxNEwxMy40MTQgMTJsNy43OTMtNy43OTNhLjk5OS45OTkgMCAxIDAtMS40MTQtMS40MTRMMTIgMTAuNTg2IDQuMjA3IDIuNzkzYS45OTkuOTk5IDAgMSAwLTEuNDE0IDEuNDE0TDEwLjU4NiAxMnoiIHN0eWxlPSJmaWxsOiNmZmYiLz48L3N2Zz4=');
+        display: block;
+        width: 18px;
+        height: 18px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        transition: opacity 0.3s ease;
+
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
 
     &_title {
       color: var(--white);

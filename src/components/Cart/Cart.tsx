@@ -2,6 +2,7 @@ import s from './Cart.module.scss'
 import formatPrice from '../../utils/formatPrice'
 import { useCartContext } from '../../context/Cart/useCartContext'
 import { useProductContext } from '../../context/Product/useProductContext'
+import type { Product } from '../../types/ProductContext'
 
 const Cart = () => {
   const { cart, isOpen, setCart, setIsOpen } = useCartContext()
@@ -9,6 +10,23 @@ const Cart = () => {
 
   if (product.length === 0) {
     return <></>
+  }
+
+  const removeFromCart = (product: Product) => {
+    let updatedCheckout = 0
+    const removedProducts = cart.products.filter((p) => {
+      if (p.id === product.id) {
+        updatedCheckout += p.price
+        return false
+      } else {
+        return true
+      }
+    })
+
+    setCart({
+      products: removedProducts,
+      checkout: cart.checkout - updatedCheckout,
+    })
   }
 
   return (
@@ -37,12 +55,22 @@ const Cart = () => {
               Agrega algo al carrito para mostrarlo aquí ;)
             </p>
           ) : (
-            cart.products.map((product, index) => (
-              <div key={index} className={s.cart_items}>
-                <p className={s.cart_items_title}>{product.title}</p>
-                <p className={s.cart_items_price}>
-                  {formatPrice(product.price)}
-                </p>
+            cart.products.map((product) => (
+              <div key={product.id} className={s.cart_items}>
+                <div>
+                  <p className={s.cart_items_title}>{product.title}</p>
+                  <p className={s.cart_items_price}>
+                    {formatPrice(product.price)}
+                  </p>
+                </div>
+                <button
+                  className={s.cart_items_remove}
+                  onClick={() => {
+                    removeFromCart(product)
+                  }}
+                >
+                  <i className={s.cart_items_remove_icon}></i>
+                </button>
               </div>
             ))
           )}
