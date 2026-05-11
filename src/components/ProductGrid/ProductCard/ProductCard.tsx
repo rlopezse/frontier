@@ -8,6 +8,10 @@ function ProductCard({ data }: { data: Product }) {
   const { cart, setIsOpen, setCart } = useCartContext()
 
   const addToCart = () => {
+    if (cart.checkout >= 2000000) {
+      alert('Acaso crees que somos millonarios!?')
+      return
+    }
     setCart({
       products: [...cart.products, data],
       checkout: cart.checkout + data.price,
