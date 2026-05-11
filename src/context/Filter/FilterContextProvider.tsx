@@ -8,9 +8,10 @@ export const FilterContextProvider = ({
   children: ReactNode
 }) => {
   const [filter, setFilter] = useState<string>('')
+  const [order, setOrder] = useState<string>('')
 
   return (
-    <FilterContext.Provider value={{ filter, setFilter }}>
+    <FilterContext.Provider value={{ filter, order, setFilter, setOrder }}>
       {children}
     </FilterContext.Provider>
   )

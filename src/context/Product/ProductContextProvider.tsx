@@ -11,10 +11,18 @@ export const ProductContextProvider = ({
 }) => {
   const [product, setProduct] = useState<Product[]>([])
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([])
+  const [orderedProducts, setOrderedProducts] = useState<Product[]>([])
 
   return (
     <ProductContext.Provider
-      value={{ product, filteredProducts, setFilteredProducts, setProduct }}
+      value={{
+        product,
+        filteredProducts,
+        orderedProducts,
+        setOrderedProducts,
+        setFilteredProducts,
+        setProduct,
+      }}
     >
       {children}
     </ProductContext.Provider>

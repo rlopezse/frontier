@@ -6,10 +6,8 @@ const category: string[] = ['apple', 'samsung', 'xiaomi', 'huawei']
 const ordenarPor: string[] = ['menor precio', 'mayor precio']
 
 // agregar un boton para mostrar todos los productos
-// agregar un dropdown para ordenar por precio
-
 const FilterTab = () => {
-  const { setFilter } = useFilterContext()
+  const { setFilter, order, setOrder } = useFilterContext()
   const { product, filteredProducts, setFilteredProducts } = useProductContext()
 
   if (product.length === 0) {
@@ -17,7 +15,6 @@ const FilterTab = () => {
   }
 
   const handleProducts = (filter: string) => {
-    //aca se filtra
     if (filter === '') {
       return setFilteredProducts(product)
     }
@@ -30,17 +27,30 @@ const FilterTab = () => {
     setFilter(filter)
   }
 
+  const handleOrder = (order: string) => {
+    setFilteredProducts(
+      [...filteredProducts].sort((a, b) => {
+        if (order === 'menor precio') {
+          return b.price - a.price
+        } else {
+          return a.price - b.price
+        }
+      }),
+    )
+    setOrder(order)
+  }
+
   return (
     <div className={s.filter}>
-      <h3 className={s.filter_title}>Ordenar por:</h3>
+      <h3 className={s.filter_title}>Ordenar por: {order}</h3>
       <div className={s.filter_buttons}>
-        {ordenarPor.map((category: string) => (
+        {ordenarPor.map((order: string) => (
           <button
             className={s.filter_button}
-            onClick={() => handleProducts(category)}
-            key={category}
+            onClick={() => handleOrder(order)}
+            key={order}
           >
-            {category}
+            {order}
           </button>
         ))}
       </div>
