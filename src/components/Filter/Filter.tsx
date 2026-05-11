@@ -3,6 +3,7 @@ import { useFilterContext } from '../../context/Filter/useFilterContext'
 import { useProductContext } from '../../context/Product/useProductContext'
 
 const category: string[] = ['apple', 'samsung', 'xiaomi', 'huawei']
+const ordenarPor: string[] = ['menor precio', 'mayor precio']
 
 // agregar un boton para mostrar todos los productos
 // agregar un dropdown para ordenar por precio
@@ -16,6 +17,7 @@ const FilterTab = () => {
   }
 
   const handleProducts = (filter: string) => {
+    //aca se filtra
     if (filter === '') {
       return setFilteredProducts(product)
     }
@@ -32,7 +34,7 @@ const FilterTab = () => {
     <div className={s.filter}>
       <h3 className={s.filter_title}>Ordenar por:</h3>
       <div className={s.filter_buttons}>
-        {category.map((category: string) => (
+        {ordenarPor.map((category: string) => (
           <button
             className={s.filter_button}
             onClick={() => handleProducts(category)}
