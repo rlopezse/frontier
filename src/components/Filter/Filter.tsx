@@ -42,31 +42,35 @@ const FilterTab = () => {
 
   return (
     <div className={s.filter}>
+      <p className={s.filter_results}>Mostrando (<em>{filteredProducts.length}</em>) resultados</p>
       <h3 className={s.filter_title}>Ordenar por: {order}</h3>
-      <div className={s.filter_buttons}>
-        {ordenarPor.map((order: string) => (
-          <button
-            className={s.filter_button}
-            onClick={() => handleOrder(order)}
-            key={order}
-          >
-            {order}
-          </button>
-        ))}
+      <div className={s.filter_filterblock}>
+        <div className={s.filter_buttons}>
+          {ordenarPor.map((order: string) => (
+            <button
+              className={s.filter_button}
+              onClick={() => handleOrder(order)}
+              key={order}
+            >
+              {order}
+            </button>
+          ))}
+        </div>
       </div>
       <h3 className={s.filter_title}>Marcas:</h3>
-      <div className={s.filter_buttons}>
-        {category.map((category: string) => (
-          <button
-            className={s.filter_button}
-            onClick={() => handleProducts(category)}
-            key={category}
-          >
-            {category}
-          </button>
-        ))}
+      <div className={s.filter_filterblock}>
+        <div className={s.filter_buttons}>
+          {category.map((category: string) => (
+            <button
+              className={s.filter_button}
+              onClick={() => handleProducts(category)}
+              key={category}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
       </div>
-      Mostrando {filteredProducts.length} resultados
     </div>
   )
 }
