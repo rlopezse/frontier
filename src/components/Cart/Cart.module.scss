@@ -7,7 +7,7 @@
   top: 0;
   position: fixed;
   right: 0;
-  background-color: var(--gray-1000);
+  background-color: var(--gray-950);
   color: var(--white);
 
   &_isOpen {
@@ -44,7 +44,7 @@
     position: absolute;
     height: 60px;
     width: 60px;
-    bottom: 10px;
+    top: 10px;
     left: -70px;
     display: flex;
     justify-content: center;
@@ -127,7 +127,7 @@
       color: var(--white);
       width: 100%;
       padding: 12px 16px;
-      border-radius: 8px;
+      border-radius: 50px;
       transition: opacity 0.3s ease;
 
       &:hover {
@@ -140,7 +140,7 @@
       color: var(--white);
       width: 100%;
       padding: 12px 16px;
-      border-radius: 8px;
+      border-radius: 50px;
       transition: opacity 0.3s ease;
 
       &:hover {
@@ -218,12 +218,14 @@
       }
 
       &_minus {
+        border-radius: 50px 0 0 50px;
         &_disabled {
           pointer-events: none;
           opacity: 0.5;
         }
       }
       &_plus {
+        border-radius: 0 50px 50px 0;
       }
     }
   }

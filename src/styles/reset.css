@@ -20,7 +20,7 @@ html {
 }
 
 body {
-  background-color: #f9f9f9;
+  background-color: var(--white);
   min-height: 100vh;
   font-family:
     'Montserrat',
