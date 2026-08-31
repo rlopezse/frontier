@@ -10,10 +10,6 @@ const FilterTab = () => {
   const { setFilter, order, setOrder } = useFilterContext()
   const { product, filteredProducts, setFilteredProducts } = useProductContext()
 
-  if (product.length === 0) {
-    return <></>
-  }
-
   const handleProducts = (filter: string) => {
     if (filter === '') {
       return setFilteredProducts(product)

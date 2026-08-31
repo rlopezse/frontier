@@ -1,16 +1,10 @@
 import s from './Cart.module.scss'
 import formatPrice from '../../utils/formatPrice'
 import { useCartContext } from '../../context/Cart/useCartContext'
-import { useProductContext } from '../../context/Product/useProductContext'
 import type { Product } from '../../types/ProductContext'
 
 const Cart = () => {
   const { cart, isOpen, setCart, setIsOpen } = useCartContext()
-  const { product } = useProductContext()
-
-  if (product.length === 0) {
-    return <></>
-  }
 
   const removeFromCart = (product: Product) => {
     let updatedCheckout = 0

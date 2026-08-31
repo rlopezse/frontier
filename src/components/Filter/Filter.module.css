@@ -47,3 +47,14 @@
 .filter_button:hover {
   color: var(--primary);
 }
+
+@media (max-width: 991px) {
+  .filter_buttons {
+    display: block;
+  }
+
+  .filter_buttons > button {
+    display: inline-block;
+    width: auto;
+  }
+}
